@@ -112,7 +112,7 @@ Continuous Assessment: Before actions, evaluate confidence (High >80%, Medium 50
 Adaptive Execution: High confidence→specialized tools, Medium→swarm/parallel, Low→gather info
 
 Tool Hierarchy:
-1. Specialized tools: sqlmap for SQLi, nikto/wpscan for web, nmap for network, metasploit for exploits
+1. Specialized tools: sqlmap for SQLi, zap/nikto/wpscan for web, nmap for network, metasploit for exploits
 2. Swarm: When confidence <70% or need multiple perspectives
 3. Parallel shell: Up to 7 commands simultaneously
 4. Meta-tools: Only for novel exploits when no existing tool works
@@ -148,6 +148,7 @@ Use when: uncertainty exists, complex target, multiple valid approaches
 shell(commands=[
     "nmap -sV {target}",
     "nikto -h http://{target}",
+    "zap-baseline.py -t http://{target}",
     "gobuster dir -u http://{target} -w /path/to/wordlist"
 ], parallel=True)
 ```

@@ -41,6 +41,7 @@ def auto_setup(skip_mem0_cleanup: bool = False) -> List[str]:
     cyber_tools = {
         'nmap': 'Network discovery and security auditing',
         'nikto': 'Web server scanner',
+        'zaproxy': 'Web application security scanner and proxy',
         'sqlmap': 'SQL injection detection and exploitation',
         'gobuster': 'Directory/file brute-forcer',
         'netcat': 'Network utility for reading/writing data',

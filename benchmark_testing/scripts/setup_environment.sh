@@ -19,7 +19,7 @@ sudo apt upgrade -y
 
 # Install security tools
 echo "[2/7] Installing security tools..."
-sudo apt install -y nmap nikto sqlmap gobuster dirb wfuzz metasploit-framework
+sudo apt install -y nmap nikto sqlmap gobuster zaproxy dirb wfuzz metasploit-framework
 
 # Install Docker and Docker Compose
 echo "[3/7] Installing Docker and Docker Compose..."

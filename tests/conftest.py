@@ -146,7 +146,7 @@ def sample_agent_config():
         "target": "test.example.com",
         "objective": "Test security assessment",
         "max_steps": 10,
-        "available_tools": ["nmap", "nikto"],
+        "available_tools": ["nmap", "nikto", "zaproxy"],
         "model_id": None,
         "region_name": "us-east-1",
         "server": "remote",

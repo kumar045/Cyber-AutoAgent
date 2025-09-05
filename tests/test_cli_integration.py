@@ -173,7 +173,7 @@ class TestMainFunction:
         mock_handler.get_evidence_summary.return_value = []
 
         mock_create_agent.return_value = (mock_agent, mock_handler)
-        mock_auto_setup.return_value = ["nmap", "nikto"]
+        mock_auto_setup.return_value = ["nmap", "nikto", "zaproxy"]
         mock_get_prompt.return_value = "test prompt"
         mock_analyze.return_value = (True, "Success", {"confidence": 95})
 

@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     nmap \
     sqlmap \
     gobuster \
+    zaproxy \
     curl \
     netcat-traditional \
     # Tools needed for nikto and metasploit installation
