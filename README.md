@@ -97,7 +97,7 @@ python src/cyberautoagent.py --target "192.168.1.100" --objective "Comprehensive
 ## Features
 
 - **Autonomous Operation**: Conducts security assessments with minimal human intervention
-- **Intelligent Tool Selection**: Automatically chooses appropriate security tools (nmap, sqlmap, nikto, etc.)
+- **Intelligent Tool Selection**: Automatically chooses appropriate security tools (nmap, sqlmap, nikto, zaproxy, etc.)
 - **Natural Language Reasoning**: Uses Strands framework with metacognitive architecture
 - **Evidence Collection**: Automatically stores findings with Mem0 memory (category="finding")
 - **Meta-Tool Creation**: Dynamically creates custom exploitation tools when needed
@@ -236,14 +236,14 @@ This meta-architecture allows the system to transcend static tool limitations an
   - Medium confidence → Deploy swarm for parallel exploration
   - Low confidence → Gather more information, try alternatives
 - **Execute**: Tool hierarchy based on confidence:
-  - Professional security tools for known vulnerabilities (sqlmap, nikto, nmap)
+  - Professional security tools for known vulnerabilities (sqlmap, nikto, zaproxy, nmap)
   - Swarm deployment when multiple approaches needed (with memory access)
   - Parallel shell for rapid reconnaissance (up to 7 commands)
   - Meta-tool creation only when no existing tool suffices
 - **Learn & Store**: Store findings with category="finding" for memory persistence
 
 **Tool Selection Hierarchy (Confidence-Based):**
-1. Specialized cyber tools (sqlmap, nikto, metasploit) - when vulnerability type is known
+1. Specialized cyber tools (sqlmap, nikto, zaproxy, metasploit) - when vulnerability type is known
 2. Swarm deployment - when confidence <70% or need multiple perspectives (includes memory)
 3. Parallel shell execution - for rapid multi-command reconnaissance
 4. Meta-tool creation - only for novel exploits when existing tools fail
@@ -348,8 +348,8 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -e .
 
 # Optional: Install security tools
-sudo apt install nmap nikto sqlmap gobuster  # Debian/Ubuntu
-brew install nmap nikto sqlmap gobuster      # macOS
+sudo apt install nmap nikto sqlmap gobuster zaproxy  # Debian/Ubuntu
+brew install nmap nikto sqlmap gobuster owasp-zap     # macOS
 
 # Run
 python src/cyberautoagent.py \
@@ -497,8 +497,8 @@ ls -la ./mem0_faiss_OP_*/
 #### Tool Not Found Errors
 ```bash
 # Install missing security tools
-sudo apt install nmap nikto sqlmap gobuster  # Debian/Ubuntu
-brew install nmap nikto sqlmap gobuster      # macOS
+sudo apt install nmap nikto sqlmap gobuster zaproxy  # Debian/Ubuntu
+brew install nmap nikto sqlmap gobuster owasp-zap     # macOS
 ```
 
 #### Ollama Issues (Local Mode)

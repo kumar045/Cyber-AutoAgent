@@ -158,7 +158,7 @@ ssh -i ~/.ssh/caa-test-key.pem kali@<INSTANCE_PUBLIC_IP>
 Prepares the Kali Linux environment with all necessary dependencies:
 
 - Updates system packages
-- Installs security tools (nmap, nikto, sqlmap, gobuster, etc.)
+- Installs security tools (nmap, nikto, sqlmap, gobuster, zaproxy, etc.)
 - Configures Docker and Docker Compose
 - Sets up Python virtual environment
 - Clones required repositories (validation-benchmarks, Cyber-AutoAgent)
